@@ -472,6 +472,8 @@ RUN if grep -q "kinoite" <<< "${BASE_IMAGE_NAME}"; then \
         rpm-ostree override replace \
         --experimental \
         --from repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
+            mutter \
+            mutter-common \
             gnome-shell \
             vte291 \
             vte-profile && \
@@ -598,7 +600,7 @@ RUN /usr/libexec/containerbuild/build-initramfs && \
     systemctl enable bazzite-hardware-setup.service && \
     systemctl enable tailscaled.service && \
     systemctl enable dev-hugepages1G.mount && \
-    systemctl enable joycond.service && \
+    systemctl disable joycond.service && \
     systemctl --global enable bazzite-user-setup.service && \
     systemctl --global enable podman.socket && \
     systemctl --global enable systemd-tmpfiles-setup.service && \
