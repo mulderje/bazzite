@@ -2,11 +2,11 @@
 
 %global _default_patch_fuzz 2
 %global build_timestamp %(date +"%Y%m%d")
-%global gamescope_tag 3.14.16
+%global gamescope_tag 3.14.17
 
 Name:           gamescope
 Version:        100.%{gamescope_tag}
-Release:        3.bazzite
+Release:        1.bazzite
 Summary:        Micro-compositor for video games on Wayland
 
 License:        BSD
@@ -21,7 +21,6 @@ Patch2:         disable-steam-touch-click-atom.patch
 Patch3:         external-rotation.patch
 Patch4:         panel-type.patch
 Patch5:         deckhd.patch
-Patch6:         modifiers.patch
 
 BuildRequires:  meson >= 0.54.0
 BuildRequires:  ninja-build
@@ -55,7 +54,7 @@ BuildRequires:  pkgconfig(sdl2)
 BuildRequires:  pkgconfig(libpipewire-0.3)
 BuildRequires:  pkgconfig(libavif)
 BuildRequires:  (pkgconfig(wlroots) >= 0.18.0 with pkgconfig(wlroots) < 0.19.0)
-BuildRequires:  (pkgconfig(libliftoff) >= 0.4.1 with pkgconfig(libliftoff) < 0.5)
+BuildRequires:  (pkgconfig(libliftoff) >= 0.4.0 with pkgconfig(libliftoff) < 0.5.0)
 BuildRequires:  pkgconfig(libcap)
 BuildRequires:  pkgconfig(hwdata)
 BuildRequires:  spirv-headers-devel
